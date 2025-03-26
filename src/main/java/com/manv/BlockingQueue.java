@@ -27,7 +27,7 @@ public class BlockingQueue<T> {
     public synchronized T dequeue() throws InterruptedException {
         while (threadQueue.isEmpty()) {
             wait();
-            System.out.println("Queue is EMPTY. Waiting for new entities.");
+            System.out.println("Queue is EMPTY. Waiting for the new entities.");
         }
         T item = threadQueue.poll();
         notifyAll();
